@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+	
+	<meta title="MagicCirle" package="com.sample.magiccirle" version="1.0.0" company="Carles Hernandez-Ferrer" />
+	<app main="Main" path="Export" file="MagicCirle" />
+	
+	<source path="Source" />
+	
+	<haxelib name="openfl" />
+	
+</project>
