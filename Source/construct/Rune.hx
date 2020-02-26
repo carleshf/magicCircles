@@ -307,41 +307,41 @@ class Rune {
     public function draw(canvas:Sprite, x:Int, y:Int, sz:Int, a:Float):Array<Shape> {
         var rst:Shape;
         switch _c {
-            case "p":
+            case "p":  // 01
                 rst = drawP(canvas, x, y, sz);
-            case "b":
+            case "b":  // 02
                 rst = drawB(canvas, x, y, sz);
-            case "f":
+            case "f":  // 03
                 rst = drawF(canvas, x, y, sz);
-            case "v":
+            case "v":  // 04
                 rst = drawV(canvas, x, y, sz);
-            case "m":
+            case "m":  // 05
                 rst = drawM(canvas, x, y, sz);
-            case "mh":
+            case "mh": // 06
                 rst = drawMH(canvas, x, y, sz);
-            case "t":
+            case "t":  // 07
                 rst = drawT(canvas, x, y, sz);
-            case "th":
+            case "th": // 08
                 rst = drawTH(canvas, x, y, sz);
-            case "d":
+            case "d":  // 09
                 rst = drawD(canvas, x, y, sz);
-            case "dh":
+            case "dh": // 10
                 rst = drawDH(canvas, x, y, sz);
-            case "ch":
+            case "ch": // 11
                 rst = drawCH(canvas, x, y, sz);
-            case "sh":
+            case "sh": // 12
                 rst = drawSH(canvas, x, y, sz);
-            case "j":
+            case "j":  // 13
                 rst = drawJ(canvas, x, y, sz);
-            case "zh":
+            case "zh": // 14
                 rst = drawZH(canvas, x, y, sz);
-            case "k":
+            case "k":  // 15
                 rst = drawK(canvas, x, y, sz);
-            case "g":
+            case "g":  // 16
                 rst = drawG(canvas, x, y, sz);
-            case "kh":
+            case "kh": // 17
                 rst = drawKH(canvas, x, y, sz);
-            case "gh":
+            case "gh": // 18
                 rst = drawGH(canvas, x, y, sz);
             case _:
                 rst = new Shape();
