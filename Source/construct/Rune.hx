@@ -164,7 +164,6 @@ class Rune {
         var h = sz;
         var draw = new Shape();
         draw.graphics.lineStyle (2, fcol, 1);
-
         draw.graphics.moveTo(w, h);
         draw.graphics.lineTo(w, 0);
         draw.graphics.lineTo(0, h / 4);
@@ -197,11 +196,108 @@ class Rune {
         var h = sz;
         var draw = new Shape();
         draw.graphics.lineStyle (2, fcol, 1);
-
         draw.graphics.moveTo(w, 0);
         draw.graphics.lineTo(w, h);
         draw.graphics.moveTo(w, h / 2);
         draw.graphics.lineTo(0, h);
+        draw.x = x;
+        draw.y = y;
+        canvas.addChild(draw);
+        return draw;
+    }
+
+    private function drawJ(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+        var w = sz / 2;
+        var h = sz;
+        var draw = new Shape();
+        draw.graphics.lineStyle (2, fcol, 1);
+        draw.graphics.moveTo(0, 0);
+        draw.graphics.lineTo(0, h);
+        draw.graphics.moveTo(0, h / 2);
+        draw.graphics.lineTo(w, h);
+        draw.graphics.moveTo(0, 3 * h / 4);
+        draw.graphics.lineTo(w / 2, h);
+        draw.x = x;
+        draw.y = y;
+        canvas.addChild(draw);
+        return draw;
+    }
+    
+    private function drawZH(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+        var w = sz / 2;
+        var h = sz;
+        var draw = new Shape();
+        draw.graphics.lineStyle (2, fcol, 1);
+        draw.graphics.moveTo(w, 0);
+        draw.graphics.lineTo(w, h);
+        draw.graphics.moveTo(w, h / 2);
+        draw.graphics.lineTo(0, h);
+        draw.graphics.moveTo(w, 3 * h / 4);
+        draw.graphics.lineTo(w / 2, h);
+        draw.x = x;
+        draw.y = y;
+        canvas.addChild(draw);
+        return draw;
+    }
+
+    private function drawK(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+        var w = sz / 2;
+        var h = sz;
+        var draw = new Shape();
+        draw.graphics.lineStyle (2, fcol, 1);
+        draw.graphics.moveTo(0, 0);
+        draw.graphics.lineTo(0, h);
+        draw.graphics.moveTo(0, h / 2);
+        draw.graphics.lineTo(w, 0);
+        draw.x = x;
+        draw.y = y;
+        canvas.addChild(draw);
+        return draw;
+    }
+
+    private function drawG(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+        var w = sz / 2;
+        var h = sz;
+        var draw = new Shape();
+        draw.graphics.lineStyle (2, fcol, 1);
+        draw.graphics.moveTo(0, 0);
+        draw.graphics.lineTo(0, h);
+        draw.graphics.moveTo(0, h / 2);
+        draw.graphics.lineTo(w, 0);
+        draw.graphics.moveTo(0, h / 4);
+        draw.graphics.lineTo(w / 2, 0);
+        draw.x = x;
+        draw.y = y;
+        canvas.addChild(draw);
+        return draw;
+    }
+
+    private function drawKH(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+        var w = sz / 2;
+        var h = sz;
+        var draw = new Shape();
+        draw.graphics.lineStyle (2, fcol, 1);
+        draw.graphics.moveTo(w, 0);
+        draw.graphics.lineTo(w, h);
+        draw.graphics.moveTo(w, h / 2);
+        draw.graphics.lineTo(0, 0);
+        draw.x = x;
+        draw.y = y;
+        canvas.addChild(draw);
+        return draw;
+    }
+
+    private function drawGH(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+        var w = sz / 2;
+        var h = sz;
+        var draw = new Shape();
+        draw.graphics.lineStyle (2, fcol, 1);
+        draw.graphics.moveTo(w, 0);
+        draw.graphics.lineTo(w, h);
+        draw.graphics.moveTo(w, h / 2);
+        draw.graphics.lineTo(0, 0);
+        draw.graphics.moveTo(w, h / 4);
+        draw.graphics.lineTo(w / 2, 0);
         draw.x = x;
         draw.y = y;
         canvas.addChild(draw);
@@ -235,6 +331,18 @@ class Rune {
                 rst = drawCH(canvas, x, y, sz);
             case "sh":
                 rst = drawSH(canvas, x, y, sz);
+            case "j":
+                rst = drawJ(canvas, x, y, sz);
+            case "zh":
+                rst = drawZH(canvas, x, y, sz);
+            case "k":
+                rst = drawK(canvas, x, y, sz);
+            case "g":
+                rst = drawG(canvas, x, y, sz);
+            case "kh":
+                rst = drawKH(canvas, x, y, sz);
+            case "gh":
+                rst = drawGH(canvas, x, y, sz);
             case _:
                 rst = new Shape();
         }
