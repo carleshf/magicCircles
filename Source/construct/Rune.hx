@@ -12,7 +12,7 @@ class Rune {
         _c = char;
     }
 
-    private function drawP(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+    private static function drawP(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
         var w = sz / 2;
         var h = sz;
         var draw = new Shape();
@@ -28,7 +28,7 @@ class Rune {
         return draw;
     }
 
-    private function drawB(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+    private static function drawB(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
         var w = sz / 2;
         var h = sz;
         var draw = new Shape();
@@ -47,7 +47,7 @@ class Rune {
 
     }
 
-    private function drawF(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+    private static function drawF(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
         var w = sz / 2;
         var h = sz;
         var draw = new Shape();
@@ -63,7 +63,7 @@ class Rune {
         return draw;
     }
 
-    private function drawV(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+    private static function drawV(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
         var w = sz / 2;
         var h = sz;
         var draw = new Shape();
@@ -81,7 +81,7 @@ class Rune {
         return draw;
     }
 
-    private function drawM(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+    private static function drawM(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
         var w = sz / 2;
         var h = sz;
         var draw = new Shape();
@@ -98,7 +98,7 @@ class Rune {
         return draw;
     }
 
-    private function drawMH(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+    private static function drawMH(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
         var w = sz / 2;
         var h = sz;
         var draw = new Shape();
@@ -115,7 +115,7 @@ class Rune {
         return draw;
     }
 
-    private function drawT(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+    private static function drawT(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
         var w = sz / 2;
         var h = sz;
         var draw = new Shape();
@@ -129,7 +129,7 @@ class Rune {
         return draw;
     }
 
-    private function drawTH(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+    private static function drawTH(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
         var w = sz / 2;
         var h = sz;
         var draw = new Shape();
@@ -143,7 +143,7 @@ class Rune {
         return draw;
     }
 
-    private function drawD(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+    private static function drawD(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
         var w = sz / 2;
         var h = sz;
         var draw = new Shape();
@@ -159,7 +159,7 @@ class Rune {
         return draw;
     }
 
-    private function drawDH(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+    private static function drawDH(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
         var w = sz / 2;
         var h = sz;
         var draw = new Shape();
@@ -175,7 +175,7 @@ class Rune {
         return draw;
     }
 
-    private function drawCH(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+    private static function drawCH(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
         var w = sz / 2;
         var h = sz;
         var draw = new Shape();
@@ -191,7 +191,7 @@ class Rune {
         return draw;
     }
 
-    private function drawSH(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+    private static function drawSH(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
         var w = sz / 2;
         var h = sz;
         var draw = new Shape();
@@ -206,7 +206,7 @@ class Rune {
         return draw;
     }
 
-    private function drawJ(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+    private static function drawJ(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
         var w = sz / 2;
         var h = sz;
         var draw = new Shape();
@@ -223,7 +223,7 @@ class Rune {
         return draw;
     }
     
-    private function drawZH(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+    private static function drawZH(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
         var w = sz / 2;
         var h = sz;
         var draw = new Shape();
@@ -240,7 +240,7 @@ class Rune {
         return draw;
     }
 
-    private function drawK(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+    private static function drawK(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
         var w = sz / 2;
         var h = sz;
         var draw = new Shape();
@@ -255,7 +255,7 @@ class Rune {
         return draw;
     }
 
-    private function drawG(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+    private static function drawG(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
         var w = sz / 2;
         var h = sz;
         var draw = new Shape();
@@ -272,7 +272,7 @@ class Rune {
         return draw;
     }
 
-    private function drawKH(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+    private static function drawKH(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
         var w = sz / 2;
         var h = sz;
         var draw = new Shape();
@@ -287,7 +287,7 @@ class Rune {
         return draw;
     }
 
-    private function drawGH(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+    private static function drawGH(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
         var w = sz / 2;
         var h = sz;
         var draw = new Shape();
@@ -304,9 +304,9 @@ class Rune {
         return draw;
     }
 
-    public function draw(canvas:Sprite, x:Int, y:Int, sz:Int, a:Float):Array<Shape> {
+    public static function draw(canvas:Sprite, c:String, x:Int, y:Int, sz:Int, a:Float):Array<Shape> {
         var rst:Shape;
-        switch _c {
+        switch c {
             case "p":  // 01
                 rst = drawP(canvas, x, y, sz);
             case "b":  // 02

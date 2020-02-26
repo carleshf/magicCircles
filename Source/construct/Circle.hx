@@ -62,8 +62,7 @@ class Circle {
     }
 
     private function drawRunes(canvas:Sprite, x:Int, y:Int, r:Int, fcol = 0x005588, fstr = 3, start_angle = 0, steps = 3):Array<Shape> {
-        var r1 = new Rune("gh");
-        var rst:Array<Shape> = r1.draw(canvas, x, y, 50, 0);
+        var rst:Array<Shape> = Rune.draw(canvas, "gh", x, y, 50, 0);
         return rst;
     }
 
