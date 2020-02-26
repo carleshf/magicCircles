@@ -48,7 +48,7 @@ class Circle {
 
         drawPolygonLine(canvas, _x, _y, _r - 33, 0x005588, 2, 270, 3);
         drawPolygonLine(canvas, _x, _y, _r - 33, 0x005588, 2, 90, 3);
-        drawPolygonLine(canvas, _x, _y, _r - 33, 0x005588, 3, 90, 6);
+        drawPolygonLine(canvas, _x, _y, _r - 33, 0x005588, 3, 90, 8);
 
         drawCircle(canvas, _x, _y, _r - 120, 0x005588, 1);
 
@@ -56,7 +56,15 @@ class Circle {
         drawCircles(canvas, _x, _y, _r - 125, 0x005588, 1, 180, 270, 8, true);
 
         drawCircle(canvas, _x, _y, _r - 130, 0x005588, 3);
+
+        drawRunes(canvas, _x, _y, _r - 150);
         
+    }
+
+    private function drawRunes(canvas:Sprite, x:Int, y:Int, r:Int, fcol = 0x005588, fstr = 3, start_angle = 0, steps = 3):Array<Shape> {
+        var r1 = new Rune("v");
+        var rst:Array<Shape> = r1.draw(canvas, x, y, 50, 0);
+        return rst;
     }
 
     private function drawPolygonLine(canvas:Sprite, x:Int, y:Int, r:Int, fcol = 0x005588, fstr = 3, start_angle = 0, steps = 3):Array<Shape> {
