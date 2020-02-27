@@ -304,6 +304,137 @@ class Rune {
         return draw;
     }
 
+    private static function drawL(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+        var w = sz / 2;
+        var h = sz;
+        var draw = new Shape();
+        draw.graphics.lineStyle (2, fcol, 1);
+        draw.graphics.moveTo(w / 2, 0);
+        draw.graphics.lineTo(w / 2, h);
+        draw.graphics.moveTo(0, h / 4);
+        draw.graphics.lineTo(w, 3 * h / 4);
+        draw.x = x;
+        draw.y = y;
+        canvas.addChild(draw);
+        return draw;
+    }
+
+    private static function drawLH(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+        var w = sz / 2;
+        var h = sz;
+        var draw = new Shape();
+        draw.graphics.lineStyle (2, fcol, 1);
+        draw.graphics.moveTo(w / 2, 0);
+        draw.graphics.lineTo(w / 2, h);
+        draw.graphics.moveTo(0, 3 * h / 4);
+        draw.graphics.lineTo(w, h / 4);
+        draw.x = x;
+        draw.y = y;
+        canvas.addChild(draw);
+        return draw;
+    }
+
+    private static function drawND(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+        var w = sz / 2;
+        var h = sz;
+        var draw = new Shape();
+        draw.graphics.lineStyle (2, fcol, 1);
+        draw.graphics.moveTo(w / 2, 0);
+        draw.graphics.lineTo(w / 2, h);
+        draw.graphics.moveTo(0, h / 4);
+        draw.graphics.lineTo(w, 3 * h / 4);
+        draw.graphics.moveTo(0, 3 * h / 4);
+        draw.graphics.lineTo(w, h / 4);
+        draw.x = x;
+        draw.y = y;
+        canvas.addChild(draw);
+        return draw;
+    }
+
+    private static function drawE(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+        var w = sz / 2;
+        var h = sz;
+        var draw = new Shape();
+        draw.graphics.lineStyle (2, fcol, 1);
+        draw.graphics.lineTo(0, h);
+        draw.graphics.moveTo(w, 0);
+        draw.graphics.lineTo(w, h);
+        draw.graphics.moveTo(0, h / 5);
+        draw.graphics.lineTo(w, h / 2);
+        draw.x = x;
+        draw.y = y;
+        canvas.addChild(draw);
+        return draw;
+    }
+
+    private static function drawEA(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+        var w = sz / 2;
+        var h = sz;
+        var draw = new Shape();
+        draw.graphics.lineStyle (2, fcol, 1);
+        draw.graphics.lineTo(0, h);
+        draw.graphics.moveTo(w, 0);
+        draw.graphics.lineTo(w, h);
+        draw.graphics.moveTo(0, h / 5);
+        draw.graphics.lineTo(w, h / 2);
+        draw.graphics.moveTo(0, h / 2);
+        draw.graphics.lineTo(w, 4 * h / 5);
+        draw.x = x;
+        draw.y = y;
+        canvas.addChild(draw);
+        return draw;
+    }
+
+    private static function drawA(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+        var w = sz / 2;
+        var h = sz;
+        var draw = new Shape();
+        draw.graphics.lineStyle (2, fcol, 1);
+        draw.graphics.lineTo(0, h);
+        draw.graphics.moveTo(w, h / 6);
+        draw.graphics.lineTo(w, h);
+        draw.graphics.moveTo(0, 0);
+        draw.graphics.lineTo(w, h / 6);
+        draw.x = x;
+        draw.y = y;
+        canvas.addChild(draw);
+        return draw;
+    }
+
+    private static function drawAA(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+        var w = sz / 2;
+        var h = sz;
+        var draw = new Shape();
+        draw.graphics.lineStyle (2, fcol, 1);
+        draw.graphics.lineTo(0, h);
+        draw.graphics.moveTo(w, h / 6);
+        draw.graphics.lineTo(w, h);
+        draw.graphics.moveTo(0, 0);
+        draw.graphics.lineTo(w, h / 6);
+        draw.graphics.moveTo(0, h / 6);
+        draw.graphics.lineTo(w, h / 3);
+        draw.x = x;
+        draw.y = y;
+        canvas.addChild(draw);
+        return draw;
+    }
+
+    private static function drawOD(canvas:Sprite, x:Int, y:Int, sz:Int, fcol = 0x005588):Shape {
+        var w = sz / 2;
+        var h = sz;
+        var draw = new Shape();
+        draw.graphics.lineStyle (2, fcol, 1);
+        draw.graphics.moveTo(0, h);
+        draw.graphics.lineTo(w / 2, 0);
+        draw.graphics.lineTo(w, h);
+        draw.graphics.moveTo(w / 2, 0);
+        draw.graphics.lineTo(w / 2, h);
+        draw.x = x;
+        draw.y = y;
+        canvas.addChild(draw);
+        return draw;
+    }
+    
     public static function draw(canvas:Sprite, c:String, x:Int, y:Int, sz:Int, a:Float):Array<Shape> {
         var rst:Shape;
         switch c {
@@ -343,6 +474,22 @@ class Rune {
                 rst = drawKH(canvas, x, y, sz);
             case "gh": // 18
                 rst = drawGH(canvas, x, y, sz);
+            case "l":  // 19
+                rst = drawL(canvas, x, y, sz);
+            case "lh": // 20
+                rst = drawLH(canvas, x, y, sz);
+            case "nd": // 21
+                rst = drawND(canvas, x, y, sz);
+            case "e":  // 22
+                rst = drawE(canvas, x, y, sz);
+            case "ea": // 23
+                rst = drawEA(canvas, x, y, sz);
+            case "a":  // 22
+                rst = drawA(canvas, x, y, sz);
+            case "aa": // 23
+                rst = drawAA(canvas, x, y, sz);
+            case "od": // 24
+                rst = drawOD(canvas, x, y, sz);
             case _:
                 rst = new Shape();
         }
