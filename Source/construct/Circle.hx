@@ -3,6 +3,8 @@ package construct;
 import openfl.display.Sprite;
 import openfl.display.Shape;
 
+import utils.RuneText;
+
 class Circle {
     private var _x:Int;
     private var _y:Int;
@@ -62,6 +64,8 @@ class Circle {
     }
 
     private function drawRunes(canvas:Sprite, x:Int, y:Int, r:Int, fcol = 0x005588, fstr = 3, start_angle = 0, steps = 3):Array<Shape> {
+        var text:Array<String> = RuneText.generate(10);
+        trace(text);
         var rst:Array<Shape> = Rune.draw(canvas, "od", x, y, 50, 0);
         return rst;
     }
