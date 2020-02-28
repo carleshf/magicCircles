@@ -79,12 +79,12 @@ class Circle {
         var inc_angle:Float = Math.abs(end_angle - start_angle) / steps;
         inc_angle = (inc_angle / 180) * Math.PI;
         var accum_angle:Float = (start_angle / 180) * Math.PI;
-        
+
         for(ii in 0...steps) {
             accum_angle += inc_angle;
             var x_iter:Float = x + r * Math.cos(accum_angle);
             var y_iter:Float = y + r * Math.sin(accum_angle);
-            rst = rst.concat(Rune.draw(canvas, text[ii], x_iter, y_iter, sz, accum_angle, fcol, fstr));
+            rst = rst.concat(Rune.draw(canvas, text[ii], x_iter, y_iter, sz, 0, fcol, fstr));
         }
 
         return rst;
