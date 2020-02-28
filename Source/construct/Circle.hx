@@ -17,14 +17,15 @@ class Circle {
     }
 
     public function draw(canvas:Sprite) {
-        var cc:Shape = new Shape();
+        /*var cc:Shape = new Shape();
         cc.graphics.beginFill(0x000000);
         cc.graphics.lineStyle (1, 0xAA0000, 1);
         cc.graphics.drawCircle(0, 0, 5);
         cc.graphics.endFill();
         cc.x = _x;
         cc.y = _y;
-        canvas.addChild(cc);
+        canvas.addChild(cc);*/
+
         drawCircle(canvas, _x, _y, _r, 0x005588, 1);
         drawCircle(canvas, _x, _y, _r - 4, 0x005588, 3);
         drawCircle(canvas, _x, _y, _r - 8, 0x005588, 1);
@@ -57,20 +58,39 @@ class Circle {
         drawCircles(canvas, _x, _y, _r - 125, 0x005588, 1, 0, 90, 8, true);
         drawCircles(canvas, _x, _y, _r - 125, 0x005588, 1, 180, 270, 8, true);
 
+        drawRunes(canvas, _x, _y, _r - 125, 0x005588, 1, 90, 180, 5, 8);
+        drawRunes(canvas, _x, _y, _r - 125, 0x005588, 1, 270, 360, 5, 8);
+
         drawCircle(canvas, _x, _y, _r - 130, 0x005588, 3);
 
-        drawRunes(canvas, _x, _y, _r - 150);
+        drawRunes(canvas, _x, _y, _r - 65, 0x005588, 2, 0, 360, 20, 6);
+
+        drawRunes(canvas, _x, _y, 0, 0x005588, 2, 0, 0, 60, 1);
         
     }
 
-    private function drawRunes(canvas:Sprite, x:Int, y:Int, r:Int, fcol = 0x005588, fstr = 3, start_angle = 0, steps = 3):Array<Shape> {
-        var text:Array<String> = RuneText.generate(10);
-        trace(text);
-        var rst:Array<Shape> = Rune.draw(canvas, "od", x, y, 50, 0);
+    private function drawRunes(canvas:Sprite, x:Int, y:Int, r:Int, fcol:Int = 0x005588, fstr:Int = 1, start_angle:Float = 0, end_angle:Float = 360, sz:Int = 20, steps:Int = 10):Array<Shape> {
+        var xi:Float = x;
+        var yi:Float = y;
+        var text:Array<String> = RuneText.generate(steps);
+        var rst:Array<Shape> = [];
+
+
+        var inc_angle:Float = Math.abs(end_angle - start_angle) / steps;
+        inc_angle = (inc_angle / 180) * Math.PI;
+        var accum_angle:Float = (start_angle / 180) * Math.PI;
+        
+        for(ii in 0...steps) {
+            accum_angle += inc_angle;
+            var x_iter:Float = x + r * Math.cos(accum_angle);
+            var y_iter:Float = y + r * Math.sin(accum_angle);
+            rst = rst.concat(Rune.draw(canvas, text[ii], x_iter, y_iter, sz, accum_angle, fcol, fstr));
+        }
+
         return rst;
     }
 
-    private function drawPolygonLine(canvas:Sprite, x:Int, y:Int, r:Int, fcol = 0x005588, fstr = 3, start_angle = 0, steps = 3):Array<Shape> {
+    private function drawPolygonLine(canvas:Sprite, x:Int, y:Int, r:Int, fcol:Int = 0x005588, fstr:Int = 3, start_angle:Float = 0, steps:Int = 3):Array<Shape> {
         var section = new Shape();
 
         var inc_angle:Float = 360 / steps;
@@ -98,7 +118,7 @@ class Circle {
         return [section];
     }
 
-    private function drawCircle(canvas:Sprite, x:Int, y:Int, r:Int, fcol = 0x005588, fstr = 3):Array<Shape> {
+    private function drawCircle(canvas:Sprite, x:Int, y:Int, r:Int, fcol:Int = 0x005588, fstr:Int = 3):Array<Shape> {
         var circle:Shape = new Shape();
         circle.graphics.lineStyle (fstr, fcol, 1);
         circle.graphics.drawCircle(0, 0, r);
@@ -108,7 +128,7 @@ class Circle {
         return [circle];
     }
 
-    private function drawCircles(canvas: Sprite, x:Int, y:Int, r:Int, fcol = 0x005588, fstr = 3, start_angle:Float = 0, end_angle:Float = 360, steps:Int = 10, fill = true) {
+    private function drawCircles(canvas: Sprite, x:Int, y:Int, r:Int, fcol:Int = 0x005588, fstr:Int = 3, start_angle:Float = 0, end_angle:Float = 360, steps:Int = 10, fill = true) {
         var section = new Shape();
 
         var r_int:Int = fstr;
@@ -138,7 +158,7 @@ class Circle {
         return [section];
     }
 
-    private function drawArch(canvas:Sprite, x:Int, y:Int, r:Int, fcol = 0x005588, fstr = 3, start_angle:Float = 0, end_angle:Float = 360):Array<Shape> {
+    private function drawArch(canvas:Sprite, x:Int, y:Int, r:Int, fcol:Int = 0x005588, fstr:Int = 3, start_angle:Float = 0, end_angle:Float = 360):Array<Shape> {
         var section = new Shape();
         section.graphics.beginFill(fcol);
 
@@ -199,7 +219,7 @@ class Circle {
         return [section];  
     }
     
-    private function drawStrip(canvas:Sprite, x:Int, y:Int, r:Int, fcol = 0x005588, fstr = 3, start_angle:Float = 0, end_angle:Float = 360, steps:Int = 10):Array<Shape> {
+    private function drawStrip(canvas:Sprite, x:Int, y:Int, r:Int, fcol:Int = 0x005588, fstr:Int = 3, start_angle:Float = 0, end_angle:Float = 360, steps:Int = 10):Array<Shape> {
         var rst:Array<Shape> = [];
         var inc:Float = Math.abs(end_angle - start_angle) / steps;
         var accum:Float = start_angle;
